@@ -1,12 +1,8 @@
-import os
-
 from collections import defaultdict
 from .file_handler import FileHandler
 
 
 def legislators_votes():
-    module_dir = os.path.dirname(__file__)
-
     legislators = FileHandler.reader('legislators.csv')
     vote_results = FileHandler.reader('vote_results.csv')
 
@@ -27,4 +23,4 @@ def legislators_votes():
             'num_supported_bills' if vote_type == 1 \
                 else 'num_opposed_bills'] += 1
 
-    print(dict(results))
+    FileHandler.writer(dict(results))
