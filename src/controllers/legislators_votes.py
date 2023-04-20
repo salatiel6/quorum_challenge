@@ -20,7 +20,9 @@ def legislators_votes():
         results[legislator_id]['name'] = legislator_name
 
         results[legislator_id][
-            'num_supported_bills' if vote_type == 1 \
-                else 'num_opposed_bills'] += 1
+            'num_supported_bills' if vote_type == 1
+            else 'num_opposed_bills'] += 1
 
-    FileHandler.writer(dict(results))
+    csv_fields = ['name', 'num_supported_bills', 'num_opposed_bills']
+    filename = "legislators-support-oppose-count.csv"
+    FileHandler.writer(dict(results), csv_fields, filename)

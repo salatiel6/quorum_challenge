@@ -1,7 +1,5 @@
-import sys
-sys.path.insert(1, "./")  # Sets 'src' directory as sources root
-
-from controllers import legislators_votes
+from controllers import legislators_votes, bills_details
 
 if __name__ == "__main__":
     legislators_votes()
+    bills_details()
