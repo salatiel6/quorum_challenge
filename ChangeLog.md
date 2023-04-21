@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 > - Initial commit
 
 > ![](https://img.shields.io/badge/FIXES-green)
+> - Missing pytest-cov requirement
 > - Lint errors on file handler tests
 > - Empty requirements.txt
 > - Bills task application not writing the correct amount of votes
