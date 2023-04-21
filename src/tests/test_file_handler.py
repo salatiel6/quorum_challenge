@@ -21,7 +21,6 @@ def test_reader(mock_csv_file):
 def test_writer(mock_csv_file):
     base_dict = {'1': {'name': 'John'}, '2': {'name': 'Jane'}}
     fields = ['name']
-    filename = 'test_output.csv'
 
     with mock.patch('pandas.DataFrame.to_csv') as mock_to_csv:
         FileHandler.writer(base_dict, fields, mock_csv_file)
@@ -31,19 +30,18 @@ def test_writer(mock_csv_file):
         expected_df = expected_df[fields]
         expected_df.index.name = 'id'
 
+        # Setup the FilHandler path
         dir_path = os.path.abspath(
             os.path.join(os.path.dirname(__file__), os.pardir))
         file1_path = os.path.join(dir_path, "controllers")
         expected_path = os.path.join(
             file1_path, '..', 'deliverables', mock_csv_file)
 
-
         mock_to_csv.assert_called_once_with(expected_path)
 
+        # Assert if the file is correctly writed
         file_path = mock_to_csv.call_args[0][0]
         df = pd.read_csv(file_path)
         df = df.to_dict(orient='records')
         expected = [{'id': 1, 'name': 'John'}, {'id': 2, 'name': 'Jane'}]
         assert df == expected
-
-
