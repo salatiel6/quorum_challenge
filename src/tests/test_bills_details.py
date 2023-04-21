@@ -56,10 +56,10 @@ def mock_file_handler():
     # Use patch to replace FileHandler.reader and FileHandler.writer
     # with mock functions
     with patch(
-            'src.controllers.bills_details.FileHandler.reader'
+            'src.controllers.file_handler.FileHandler.reader'
     ) as mock_reader, \
             patch(
-                'src.controllers.bills_details.FileHandler.writer'
+                'src.controllers.file_handler.FileHandler.writer'
             ) as mock_writer:
 
         # Yield both mock functions as a tuple
