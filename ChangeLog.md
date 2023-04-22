@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-![](https://img.shields.io/badge/Unreleased-gold)
+![](https://img.shields.io/badge/v0.1.0-gold)
 
 > ![](https://img.shields.io/badge/FEATS-blue)
 > - Requirements.txt created
@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 > - Initial commit
 
 > ![](https://img.shields.io/badge/FIXES-green)
+> - Missing flake8 requirement
 > - Missing pytest-cov requirement
 > - Lint errors on file handler tests
 > - Empty requirements.txt
