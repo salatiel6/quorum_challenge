@@ -72,7 +72,7 @@ With coverage: `pytest -vv --cov=. --cov-report=term-missing --cov-config=.cover
 `python main.py`
 
 
-9. Access the CSV result files directory  
+9. Access the CSV result files directory (the `deliverables` folder will only be available after runnig the application once)  
 Widows/Linux:`cd deliverables`  
 Mac: `open cd deliverables`
 
